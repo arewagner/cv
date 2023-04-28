@@ -1,105 +1,124 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <title>Are Wagner</title>
+        <script>
+            function setSelectedPanel(panelName) {
+                var panels = document.querySelectorAll('.panel');
+                panels.forEach(function(thispanel) {
+                    if (thispanel.classList.contains(panelName)) {
+                        if(!thispanel.classList.contains("selected")) {
+                            thispanel.classList.add("selected"); 
+                        }
+                    }
+                    else {
+                        thispanel.classList.remove("selected");
+                    }
+                });
 
-<link rel="stylesheet" href="styles.css" />
-<title>Are Wagner</title>
+                var buttons = document.querySelectorAll('.button');
+                buttons.forEach(function(thisbutton) {
+                    if (thisbutton.classList.contains(panelName)) {
+                        if(!thisbutton.classList.contains("selected")) {
+                            thisbutton.classList.add("selected"); 
+                        }
+                    }
+                    else {
+                        thisbutton.classList.remove("selected");
+                    }
+                });
+            }
+        </script>
+    </head>
 
-<header>
-    <h1>CV</h1>
-    
-</header>
+    <body>
+        <section id="header">
+            <h1>CV</h1>
+        </section>
 
-<body>
+        <section id="personal">
+            <div class="picture">
+                <img src="Ludde1.jpg" />
+            </div>
+            <div class="bio">
+                <p>Are Wagner</p>
+                <br>
+                <p>Born 04.11.1985</p>
+                <p>Full stack developer</p>
+                <p>13 years experience</p>
+            </div>
+        </section>    
 
-    <section id="personal">
+        <section id="experience">
+            <div class="timeline">
+                <ul>
+                    <li class="button bember selected" onclick="setSelectedPanel('bember')">
+                        <span>2019-2023</span>
+                        <div class="content">
+                            <h3>Bember</h3>
+                            <h3>Software Developer / CIO</h3>
+                        </div>
+                    </li>
+                    <li class="button swarco" onclick="setSelectedPanel('swarco')">
+                        <span>2013-2019</span>
+                        <div class="content">
+                            <h3>Swarco</h3>
+                            <h3>Software Developer</h3>
+                        </div>
+                    </li>            
+                    <li class="button apcoa" onclick="setSelectedPanel('apcoa')">
+                        <span>2011-2013</span>
+                        <div class="content">
+                            <h3>APCOA</h3>
+                            <h3>Software Developer</h3>
+                        </div>
+                    </li>
+                    <li class="button nith" onclick="setSelectedPanel('nith')">
+                        <span>2008-2011</span>
+                        <div class="content">
+                            <h3>NITH</h3>
+                            <h3>Studies</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panels">
+                <div class="panel bember selected">
+                    <p>Bember is a company focused on prop tech, including parking solutions</p>
+                    <p>Full stack development</p>
+                    <p>System architecture</p>
+                    <p>Product development</p>
+                    <p>Chief Information Officer, responsibility for department of developers</p>
+                    <p></p>
+                </div>
 
-        <div class="picture">
-            <img src="Ludde1.jpg" />
-        </div>
-        <div class="bio">
-            <p>Are Wagner</p>
-            <br>
-            <p>Born 04.11.1985</p>
-            <p>Full stack developer</p>
-            <p>13 years experience</p>
-        </div>
+                <div class="panel swarco">
+                    <p>Swarco delivers parking and traffic solutions</p>
+                    <p>Backend development .NET</p>
+                    <p>Project manager</p>
+                    <p></p>
+                </div>
 
-    </section>    
+                <div class="panel apcoa">
+                    <p>APCOA (then EuroPark)</p>
+                    <p>IT management</p>
+                    <p>Backend development</p>
+                    <p>Developing in BMC Remedy</p>
+                    <p></p>
+                </div>
 
-    <section id="timeline">
-  
-        <div class="tl-item">
-          
-          <div class="tl-bg" style="background-image: url(nith_logo.png)"></div>
-          
-          <div class="tl-year">
-            <p class="f2 heading--sanSerif">NITH</p>
-            <p class="f2 heading--sanSerif">Studies</p>
-            <p class="f2 heading--sanSerif">2008-11</p>
-          </div>
-      
-          <div class="tl-content">
-            <h1>Lorem ipsum dolor sit</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-          </div>
-      
-        </div>
-      
-        <div class="tl-item">
-          
-          <div class="tl-bg" style="background-image: url(apc_logo.png)"></div>
-          
-          <div class="tl-year">
-            <p class="f2 heading--sanSerif">APCOA</p>
-            <p class="f2 heading--sanSerif">Software Developer</p>
-            <p class="f2 heading--sanSerif">2011-13</p>
-          </div>
-      
-          <div class="tl-content">
-            <h1 class="f3 text--accent ttu">Vestibulum laoreet lorem</h1>
-            <p>Suspendisse potenti. Sed sollicitudin eros lorem, eget accumsan risus dictum id. Maecenas dignissim ipsum vel mi rutrum egestas. Donec mauris nibh, facilisis ut hendrerit vel, fringilla sed felis. Morbi sed nisl et arcu.</p>
-          </div>
-      
-        </div>
-      
-        <div class="tl-item">
-          
-          <div class="tl-bg" style="background-image: url(Swarco-Logo.png)"></div>
-          
-          <div class="tl-year">
-            <p class="f2 heading--sanSerif">Swarco</p>
-            <p class="f2 heading--sanSerif">Software Developer</p>
-            <p class="f2 heading--sanSerif">2013-19</p>
-          </div>
-      
-          <div class="tl-content">
-            <h1 class="f3 text--accent ttu">Phasellus mauris elit</h1>
-            <p>Mauris cursus magna at libero lobortis tempor. Suspendisse potenti. Aliquam interdum vulputate neque sit amet varius. Maecenas ac pulvinar nisi. Fusce vitae nunc ultrices, tristique dolor at, porttitor dolor. Etiam id cursus arcu, in dapibus nibh. Pellentesque non porta leo. Nulla eros odio, egestas quis efficitur vel, pretium sed.</p>
-          </div>
-      
-        </div>
-      
-        <div class="tl-item">
-          
-          <div class="tl-bg" style="background-image: url(Bember-logo.png)"></div>
-          
-          <div class="tl-year">
-            <p class="f2 heading--sanSerif">Bember</p>
-            <p class="f2 heading--sanSerif">Software Developer / CIO</p>
-            <p class="f2 heading--sanSerif">2019-23</p>
-          </div>
-      
-          <div class="tl-content">
-            <h1 class="f3 text--accent ttu">Mauris vitae nunc elem</h1>
-            <p>Suspendisse ac mi at dolor sodales faucibus. Nunc sagittis ornare purus non euismod. Donec vestibulum efficitur tortor, eget efficitur enim facilisis consequat. Vivamus laoreet laoreet elit. Ut ut varius metus, bibendum imperdiet ex. Curabitur diam quam, blandit at risus nec, pulvinar porttitor lorem. Pellentesque dolor elit.</p>
-          </div>
-      
-        </div>
-      </section>
+                <div class="panel nith">
+                    <p>Norwegian School of Information Technology</p>
+                    <p>Studied Game Design</p>
+                    <p>Java, C++, System design, Databases, Networks, AI design</p>
+                    <p>Visual storytelling, Level design, Prototyping</p>
+                    <p></p>
+                </div>
+            </div>
+        </section>
 
-</body>
-
-<footer>
-    <a href="mailto: arewagner@gmail.com">arewagner@gmail.com</a>
-</footer>
-
+        <section id="footer">
+            <a href="mailto: arewagner@gmail.com">arewagner@gmail.com</a>
+        </section>
+    </body>
 </html>
